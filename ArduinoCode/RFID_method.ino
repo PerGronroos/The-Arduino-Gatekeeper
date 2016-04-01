@@ -1,5 +1,10 @@
 /*Based on prior code written by BARRAGAN, HC Gilje, djmatic, and 
   Martijn The for RFID reader.
+  **
+  Based on code by BARRAGAN <http://people.interaction-ivrea.it/h.barragan> 
+  and code from HC Gilje - http://hcgilje.wordpress.com/resources/rfid_id12_tagreader/
+  Modified for Arudino by djmatic
+  Modified for ID-12 and checksum by Martijn The - http://www.martijnthe.nl/
  */
 void RFIDread()
 {
