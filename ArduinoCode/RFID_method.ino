@@ -1,5 +1,5 @@
-/*Parts written by BARRAGAN, HC Gilje, djmatic, and 
- * Martijn The for RFID reader.
+/*Based on prior code written by BARRAGAN, HC Gilje, djmatic, and 
+  Martijn The for RFID reader.
  */
 void RFIDread()
 {
@@ -54,17 +54,17 @@ void RFIDread()
       Serial.print("5-byte code: ");
       for (i=0; i<5; i++) 
       {
-        if (code[i] < 16) Serial.print("0");
+        if (code[i] < 16) Serial.print("0"); //Add zeroes in empty spaces.
         Serial.print(code[i], HEX);
         Serial.print(" ");
       }
       RFID = "";
       for (i=0; i<5; i++) 
       {
-        if (code[i] < 16) RFID.concat(0);
+        if (code[i] < 16) RFID.concat(0); //Setup upload string.
         RFID.concat(String(code[i], HEX));
       }
-      screen.printAt(12, "An RFID tag has been scanned:");
+      screen.printAt(12, "An RFID tag has been scanned:"); //Print the data to Serial UART.
       screen.printAt(13, RFID);
       Serial.println();
 
@@ -72,7 +72,7 @@ void RFIDread()
       Serial.print(code[5], HEX);
       Serial.println(code[5] == checksum ? " -- passed." : " -- error.");
       Serial.println();
-      digitalWrite(4, LOW);
+      digitalWrite(4, LOW); // Flash the RFID scan LED.
       delay(1000);
       digitalWrite(4, HIGH);
       //tone(51, 523, 2); //Activates buzzer tone.
@@ -80,7 +80,7 @@ void RFIDread()
     bytesread = 0;
   }
   Serial2.end();
-  Serial2.begin(9600);
+  Serial2.begin(9600); //Reset the serial port for the RFID reader.
   
   ////*** List RFID tags that should be recognized ***///
 
