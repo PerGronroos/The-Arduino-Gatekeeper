@@ -81,16 +81,21 @@ void RFIDread()
   }
   Serial2.end();
   Serial2.begin(9600);
+  
+  ////*** List RFID tags that should be recognized ***///
 
-  if (RFID == "6700729be4") {
-    user = "Timothy Le";
+  if (RFID == "0000000000") {
+    user = " ";
     RFIDGranted();
   }
-  else if (RFID == "7e001fe09e") {
-    user = "Nathan Le";
+  else if (RFID == "0000000000") {
+    user = " ";
     RFIDGranted();
   }
-  else {
+  
+  //Only perform these actions if the RFID is not recognized.
+  else 
+  {
     Serial.println("RFID - Access Denied");
     screen.printAt(14, "RFID - Access has been denied.");
     digitalWrite (2, LOW);
@@ -104,7 +109,9 @@ void RFIDread()
   }
 }
 
-void RFIDGranted() {
+//Perform these actions for all recognized RFID tags.
+void RFIDGranted() 
+{
   Serial.println("RFID - Access Granted");
   screen.printAt(14, "RFID - Access has been granted.");
   access = "Granted";
