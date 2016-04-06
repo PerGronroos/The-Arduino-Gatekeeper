@@ -27,17 +27,15 @@
 #include <Colors.h>
 
 ///***WiFi Network Config ***///
-//char ssid[] = "Verizon-SM-G900V-9AEC"; //  your network SSID (name)
-//char pass[] = "rnra644@";    // your network password (use for WPA, or use as key for WEP)
-char ssid[] = "NGUEST";
-char pass[] = "GuestNetwork19972016NIT";
+char ssid[] = "---"; //  your network SSID (name)
+char pass[] = "---"; // your network password (use for WPA, or use as key for WEP)
 
 ///*** Azure IoT Hub Config ***///
 //see: http://mohanp.com/  for details on getting this right if you are not sure.
-char hostname[] = "IoTGatekeeper.azure-devices.net";    // host name address for your Azure IoT Hub
+char hostname[] = "---.azure-devices.net";    // host name address for your Azure IoT Hub, usually part of azure-devices.net domain
 char feeduri[] = "/devices/MKR1000/messages/"; //feed URI
 char apiver[] = "?api-version=2016-02-03";
-char authSAS[] = "SharedAccessSignature sr=IoTGatekeeper.azure-devices.net%2fdevices%2fMKR1000&sig=NYszH9vRDdGDFMTNTdWQPBYdGTf7IgWJrhKx2olPiEc%3d&se=1471508182";
+char authSAS[] = "---"; //Place SAS code for device here.
 
 ///*** Azure IoT Hub Config ***///
 unsigned long lastConnectionTime = 0;
